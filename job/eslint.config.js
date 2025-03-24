@@ -3,6 +3,7 @@ import pluginVue from 'eslint-plugin-vue'
 import globals from 'globals'
 import pluginVitest from '@vitest/eslint-plugin'
 import skipFormatting from '@vue/eslint-config-prettier/skip-formatting'
+import pluginVitestGlobals from 'eslint-plugin-vitest-globals'
 
 export default [
   {
@@ -31,4 +32,10 @@ export default [
     files: ['src/**/__tests__/*'],
   },
   skipFormatting,
+  {
+    extends: ['plugin:vitest-globals/recommended'],
+    env: {
+      'vitest-globals/env': true,
+    },
+  },
 ]

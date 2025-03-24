@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "test:unit": "vitest",
+    "test:unit": "vitest --coverage",
     "lint": "eslint . --fix",
     "format": "prettier --write src/"
   },
@@ -19,10 +19,12 @@
   "devDependencies": {
     "@eslint/js": "^9.21.0",
     "@vitejs/plugin-vue": "^5.2.1",
+    "@vitest/coverage-v8": "^3.0.9",
     "@vitest/eslint-plugin": "^1.1.36",
     "@vue/eslint-config-prettier": "^10.2.0",
     "@vue/test-utils": "^2.4.6",
     "eslint": "^9.21.0",
+    "eslint-plugin-vitest-globals": "^1.5.0",
     "eslint-plugin-vue": "~10.0.0",
     "globals": "^16.0.0",
     "jsdom": "^26.0.0",
