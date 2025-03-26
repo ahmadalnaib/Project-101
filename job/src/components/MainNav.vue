@@ -16,7 +16,8 @@
     
   </nav>
   <div class="ml-auto flex h-full items-center">
-  <ActionButton/>
+    <ProfileImage v-if="isLogin"/>
+  <action-button  v-else @click="handleLogin" text="Sign in"/>
   </div>
 
   </div>
@@ -27,10 +28,12 @@
 
 <script>
 import ActionButton from '@/components/ActionButton.vue';
+import ProfileImage from '@/components/ProfileImage.vue';
 export default{
   name: 'MainNav',
   components:{
-    ActionButton
+    ActionButton,
+    ProfileImage
   },
   data(){
     return{
@@ -43,8 +46,14 @@ export default{
       "How we hire",
       "Students",
       "Jobs"
-    ]
+    ],
+    isLogin: false
     }
   },
+  methods:{
+    handleLogin(){
+      this.isLogin = !this.isLogin;
+    }
+  }
 }
 </script>
