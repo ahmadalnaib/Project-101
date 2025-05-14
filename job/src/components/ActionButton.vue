@@ -1,5 +1,5 @@
 <template>
-  <button role="button" :class="{primary:primary}">{{ text }}</button>
+  <button role="button" :class="buttonClass">{{ text }}</button>
 </template>
 
 <script>
@@ -11,6 +11,11 @@ export default {
       primary: true,
     }
   },
+  computed:{
+    buttonClass(){
+      return {primary:this.primary}
+    }
+  }
 }
 </script>
 
